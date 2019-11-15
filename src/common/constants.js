@@ -1,5 +1,5 @@
 const Constants = Object.freeze({
-    API_DEV_URL: 'http://localhost:00000/api',
+    API_DEV_URL: 'http://localhost:56242/api',
     API_ENDPOINTS: {
         PORTAFOLIOS: 'portafolios',
         ACTIVIDADES: 'actividades',
