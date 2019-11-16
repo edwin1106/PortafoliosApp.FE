@@ -1,0 +1,136 @@
+#location-container {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    background-color: #fff;
+}
+
+.full-h{
+    min-height: calc(100vh - 40px - 40px);
+    margin-top: 50px;
+}
+.title-text{
+    color: #41a0eb;
+    font-size: 29px;
+    
+}
+.title{
+    color: #41a0eb;
+}
+
+#main-container {
+    padding-top: 40px;
+}
+
+#actualizar{
+    margin-bottom: 10px;
+}
+
+.fullscreen-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.7);
+}
+.footer{
+    padding-top: 10px;
+    height: 54px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+
+}
+
+
+.fullscreen-modal > div {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%), translateY(-50%);
+    width: 3rem; 
+    height: 3rem;
+}
+.action-btn {
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+}
+#ojo{
+    padding-bottom: 0px;   
+}
+
+.search-button{
+    position: absolute;
+    bottom: 0;
+}
+
+.checklist{
+    vertical-align: middle;
+    min-width: 768px;
+    font-size: 21px;
+    margin: 10px;
+}
+.checklist > input {
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.check > input{
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+.custom-scrollbar{
+    position: relative;
+    max-height: 540px;
+    overflow: auto;
+}
+
+.logo{
+    width: 50px;
+    height: 100px;
+}
+
+.bg-blue{
+    color: white;
+    background-color: #154194!important;
+}
+
+.container-home-header{
+    padding-top: 100px;
+
+}
+
+.container-home-mision{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 22px;
+    padding: 50px;
+    align-content: center;
+}
+
+.home-title{
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.call-action{
+    color: white;
+    position: relative;
+    background-image: url('https://scontent.feoh1-1.fna.fbcdn.net/v/t1.0-9/22549521_1898394690178175_4890755429540025780_n.jpg?_nc_cat=107&_nc_oc=AQn1Gd5dwrlpHz9Tk_I2A1UwoxKxuJEDfeSbT-hbnVUINCGG96pkxUUACnS_Tm8o-JI&_nc_ht=scontent.feoh1-1.fna&oh=343721a83216c1c5e70345db52d54a4c&oe=5E057BC5');  
+    background-repeat: no-repeat;
+    background-position: 50% 45%;
+    background-size: cover;  
+    height: calc(100vh - 40px);
+    width: 100%;
+}
+.color-filter-indigo-teal { 
+    height: calc(100vh - 40px);
+    background: radial-gradient(ellipse at bottom,rgba(65,160,235,.2) 0,#000 100%); 
+}

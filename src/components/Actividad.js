@@ -1,14 +1,15 @@
 import React from 'react';
 import moment from 'moment';
 
-const Portafolio = ({ descripcion, objetivo, fechaInicio, id, acciones }) => {
+const Portafolio = ({ descripcion, tutor, fecha, id, puntaje, acciones }) => {
   const fechaI = moment(fechaInicio).format('l');
   return (
     <tr>
       <td>{id}</td>
       <td>{descripcion}</td>
-      <td>{objetivo}</td>
-      <td>{fechaI}</td>
+      <td>{tutor}</td>
+      <td>{fecha}</td>
+      <td>{puntaje}</td>
       <td>{acciones}</td>
     </tr>
   );
