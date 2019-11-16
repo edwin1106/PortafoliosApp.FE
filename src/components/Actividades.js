@@ -1,13 +1,13 @@
 import React from 'react'
 import { Component } from 'react';
-import Portafolio from '../components/Portafolio';
+import Actividad from '../components/Actividad';
 import history from '../history';
 import ButtonRedirect from './ButtonRedirect';
 
 
 class Actividades extends Component {
   componentDidMount() {
-    this.props.fetchingPortafolios()
+    this.props.fetchingActividades()
   }
 
   render() {
@@ -24,8 +24,8 @@ class Actividades extends Component {
     return (
       <>
       <ButtonRedirect
-      text = {'Crear Programa'}
-      link = {'/Programa/Crear'}
+      text = {'Crear Actividad'}
+      link = {'/Actividad/Crear'}
       />
         <div>
         <table className="table table-hover">
@@ -33,18 +33,20 @@ class Actividades extends Component {
             <tr>
               <th scope='col'>Id</th>
               <th scope='col'>Descripción</th>
-              <th scope='col'>Objetivo</th>
-              <th scope='col'>Fecha de Inicio</th>
+              <th scope='col'>Tutor</th>
+              <th scope='col'>Puntaje</th>
+              <th scope='col'>fecha</th>
               <th scope='col'>Acciones</th>
             </tr>
           </thead>
           <tbody>
-          {this.props.portafolios.map((portafolio) =>
-            <Portafolio
-              id= {portafolio.id}
-              descripcion= {portafolio.descripcion}
-              objetivo = {portafolio.objetivo}
-              fechaInicio = {portafolio.fechaInicio}
+          {this.props.actividades.map((actividad) =>
+            <Actividad
+              id= {actividad.id}
+              descripcion= {actividad.descripcion}
+              tutor = {actividad.tutor}
+              puntaje = {actividad.puntaje}
+              fecha = {actividad.fecha}
               acciones = {
                 <>
                 <button

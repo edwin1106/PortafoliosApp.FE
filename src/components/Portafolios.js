@@ -24,8 +24,8 @@ class Portafolios extends Component {
     return (
       <>
       <ButtonRedirect
-      text = {'Crear Programa'}
-      link = {'/Programa/Crear'}
+      text = {'Crear Portafolio'}
+      link = {'/Portafolio/Crear'}
       />
         <div>
         <table className="table table-hover">
