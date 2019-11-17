@@ -9,6 +9,8 @@ const portafolio = (state = defaultState, action) =>{
   switch(action.type) {   
     case ACTIONS.FETCH_PORTAFOLIOS:
       return { ...state, portafoliosData: action.payload};
+    case ACTIONS.CREATE_PORTAFOLIOS:
+      return { ...state, portafoliosData: [...state.portafoliosData, action.payload]}
     default: 
       return state; 
   }

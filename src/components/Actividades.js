@@ -25,7 +25,7 @@ class Actividades extends Component {
       <>
       <ButtonRedirect
       text = {'Crear Actividad'}
-      link = {'/Actividad/Crear'}
+      link = {'/Actividades/Crear'}
       />
         <div>
         <table className="table table-hover">

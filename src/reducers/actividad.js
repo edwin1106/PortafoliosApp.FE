@@ -9,6 +9,8 @@ const actividad = (state = defaultState, action) =>{
   switch(action.type) {   
     case ACTIONS.FETCH_ACTIVIDADES:
       return { ...state, actividadesData: action.payload};
+    case ACTIONS.CREATE_ACTIVIDADES:
+      return {...state, actividadesData: [...state.actividadesData, action.payload]}
     default: 
       return state; 
   }
