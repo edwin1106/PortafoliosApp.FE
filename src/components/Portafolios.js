@@ -47,17 +47,17 @@ class Portafolios extends Component {
               fechaInicio = {portafolio.fechaInicio}
               acciones = {
                 <>
-                <button
-                id= 'ensayo'
-                className='btn btn-success action-btn'>
-                Editar
-                  </button>
                   <button
-                  id = 'ensayo'
-                className='btn btn-success action-btn'>
-                Detalles
-                  </button>
-                  </>
+                  id= 'ensayo'
+                  className='btn btn-success action-btn'>
+                  Editar
+                    </button>
+                    <button
+                    id = 'ensayo'
+                  className='btn btn-success action-btn'>
+                  Detalles
+                    </button>
+                    </>
               }
             />
           )}
@@ -67,7 +67,7 @@ class Portafolios extends Component {
         <br></br>
         <button
           className='btn btn-primary btn-lg'
-          onClick={() => this.props.fetchData()} >
+          onClick={() => this.props.fetchingPortafolios()} >
           Actualizar
         </button>
       </>

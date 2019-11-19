@@ -44,7 +44,7 @@ class CrearPortafolio extends React.Component {
     );
   }
   onSubmit = (formValues) => {
-    this.props.creatingPrograma({ ...formValues })
+    this.props.creatingPortafolio(formValues)
   }
 
   render() {
@@ -55,7 +55,7 @@ class CrearPortafolio extends React.Component {
           <div className="row mb-5">
             <div className="col">
               <Field 
-                name="nombre" 
+                name="descripcion" 
                 component={this.renderInput} 
                 label="Descripción"
                 placeholder="Digite la descripción del portafolio" />
@@ -92,5 +92,5 @@ const validate = (formValues) => {
   };
 
  export default reduxForm({
-  form: 'PostPrograma', validate
+  form: 'PostPortafolio', validate
 })(CrearPortafolio);

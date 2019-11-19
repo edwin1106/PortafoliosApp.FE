@@ -1,5 +1,6 @@
 import ACTIONS from "./types";
 import { getPortafolios, postPortafolios } from "../api/PortafolioApi";
+import history from '../history'
 
 export const fetchPortafolios = (portafolios) => ({
     type: ACTIONS.FETCH_PORTAFOLIOS,
@@ -17,4 +18,5 @@ export const fetchingPortafolios = () => async (dispatch) => {
 export const creatingPortafolio= (portafolio) => async(dispatch) =>{
   const response = await postPortafolios(portafolio)
   dispatch(createPortafolio(response))
+  history.push(`/Portafolios`)
 }
