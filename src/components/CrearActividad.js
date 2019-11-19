@@ -7,6 +7,7 @@ import DateTimePicker from 'react-datepicker';
 
 class CrearActividad extends React.Component {
   componentDidMount() {   
+    this.props.fetchingPortafolios();
   }
 
   renderDateTimePicker = ({ input: { onChange,value}, showTime }) =>
@@ -43,26 +44,46 @@ class CrearActividad extends React.Component {
       </>
     );
   }
+
+  renderSelect = ({ input, label, children, meta, placeholder })  => {
+    const className = `form-control ${meta.error && meta.touched ? 'is-invalid' : ''}`;
+    return (
+      <>
+        <label>{label}</label>
+        <div className="input-group">          
+            <select 
+              className={className}
+              placeholder={placeholder}
+              {...input}>
+              { children }
+            </select>
+            {this.renderError(meta)}
+        </div>
+      </>
+    );
+  }
+
   onSubmit = (formValues) => {
-    this.props.creatingPrograma({ ...formValues })
+    this.props.creatingActividad(formValues);
   }
 
   render() {
-        return (
+      if(!this.props.portafolios)
+        return <p>...loading</p>
+      else return (
         <>
         <form onSubmit={this.props.handleSubmit(this.onSubmit)} className = 'ui form error'>
-
           <div className="row mb-3">
             <div className="col">
               <Field 
-                name="nombre" 
+                name="descripcion" 
                 component={this.renderInput} 
                 label="Descripción"
                 placeholder="Ingrese una descripción" />
             </div>
             <div className="col">
               <Field 
-                name="objetivo" 
+                name="tutor" 
                 component={this.renderInput} 
                 label="Tutor"
                 placeholder="Nombre del encargado de la actividad" />
@@ -71,7 +92,7 @@ class CrearActividad extends React.Component {
           <div className="row mb-3">
             <div className="col">
               <Field 
-                name="objetivo" 
+                name="puntaje" 
                 component={this.renderInput} 
                 label="Puntaje"
                 placeholder="Ingrese un puntaje" />
@@ -80,10 +101,21 @@ class CrearActividad extends React.Component {
               <label>Fecha</label>
                 <br></br>
                   <Field
-                    name="fechaInicio"
+                    name="fecha"
                     showTime={false}
                     component={this.renderDateTimePicker}/>
             </div>
+            <div className ="col">
+              <Field
+                name="portafolioId"
+                component={this.renderSelect} 
+                label="Portafolio">
+                   <option defaultValue= " " selected hidden> -- Seleccione una opcion -- </option>
+                {this.props.portafolios.map((portafolio) => (
+                  <option key={portafolio.id} value={portafolio.id}>{portafolio.descripcion}</option>
+                ))}                
+              </Field>
+              </div>
           </div>
           <button className='btn btn-primary btn-lg' >
             Aceptar
@@ -101,5 +133,5 @@ const validate = (formValues) => {
   };
 
  export default reduxForm({
-  form: 'PostPrograma', validate
+  form: 'PostActividad', validate
 })(CrearActividad);

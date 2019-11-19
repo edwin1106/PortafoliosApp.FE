@@ -69,7 +69,7 @@ class Actividades extends Component {
         <br></br>
         <button
           className='btn btn-primary btn-lg'
-          onClick={() => this.props.fetchData()} >
+          onClick={() => this.props.fetchingActividades()} >
           Actualizar
         </button>
       </>

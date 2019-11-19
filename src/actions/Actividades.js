@@ -1,5 +1,6 @@
 import ACTIONS from "./types";
 import {getActividades, postActividades} from "../api/ActividadApi";
+import history from '../history'
 
 export const fetchActividades = (actividades) => ({
     type: ACTIONS.FETCH_ACTIVIDADES,
@@ -19,4 +20,5 @@ export const fetchingActividades = () => async (dispatch) => {
 export const creatingActividad = (actividad) => async(dispatch) =>{
   const response = await postActividades(actividad)
   dispatch(createActividad(response))
+  history.push(`/Actividades`)
 }
