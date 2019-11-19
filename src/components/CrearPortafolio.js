@@ -10,13 +10,13 @@ class CrearPortafolio extends React.Component {
   }
 
   renderDateTimePicker = ({ input: { onChange,value}, showTime }) =>
-  <DateTimePicker className="form-control"
-    placeholderText="Seleccione la fecha"
-    selected={value}
-    onChange={onChange}
-    format="YYYY MMM DD"
-    time={showTime}
-    value={ !value ? null : new Date(value)}/>
+    <DateTimePicker className="form-control"
+      placeholderText="Seleccione la fecha"
+      selected={value}
+      onChange={onChange}
+      format="YYYY MMM DD"
+      time={showTime}
+      value={ !value ? null : new Date(value)}/>
 
   renderError ({error,touched}){
     if (touched && error) {
@@ -77,7 +77,7 @@ class CrearPortafolio extends React.Component {
             </div>
           </div>
           <button className='btn btn-primary btn-lg' >
-            Aceptar
+            Registrar
           </button>
         </form>
         </>
@@ -87,7 +87,7 @@ class CrearPortafolio extends React.Component {
 const validate = (formValues) => {
   const errors = {};
   if (!formValues.objetivo) {errors.objetivo = 'El campo no debe estar vacío';}
-  if (!formValues.nombre) {errors.nombre= 'El campo no debe estar vacío';}
+  if (!formValues.descripcion) {errors.descripcion= 'El campo no debe estar vacío';}
   return errors;
   };
 
