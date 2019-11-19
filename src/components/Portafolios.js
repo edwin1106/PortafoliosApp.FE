@@ -1,7 +1,6 @@
 import React from 'react'
 import { Component } from 'react';
 import Portafolio from '../components/Portafolio';
-import history from '../history';
 import ButtonRedirect from './ButtonRedirect';
 
 
@@ -41,6 +40,7 @@ class Portafolios extends Component {
           <tbody>
           {this.props.portafolios.map((portafolio) =>
             <Portafolio
+              key = {portafolio.id}
               id= {portafolio.id}
               descripcion= {portafolio.descripcion}
               objetivo = {portafolio.objetivo}

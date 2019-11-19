@@ -1,7 +1,6 @@
 import React from 'react'
 import { Component } from 'react';
 import Actividad from '../components/Actividad';
-import history from '../history';
 import ButtonRedirect from './ButtonRedirect';
 
 
@@ -42,6 +41,7 @@ class Actividades extends Component {
           <tbody>
           {this.props.actividades.map((actividad) =>
             <Actividad
+              key ={actividad.id}
               id= {actividad.id}
               descripcion= {actividad.descripcion}
               tutor = {actividad.tutor}
