@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from 'react';
 import Actividad from '../components/Actividad';
 import ButtonRedirect from './ButtonRedirect';
+import history from '../history';
 
 
 class Actividades extends Component {
@@ -51,13 +52,14 @@ class Actividades extends Component {
                 <>
                 <button
                 id= 'ensayo'
-                className='btn btn-success action-btn'>
+                className='btn btn-success action-btn'
+                onClick={() => history.push(`/Actividades/${actividad.id}`)} >
                 Editar
                   </button>
                   <button
                   id = 'ensayo'
-                className='btn btn-success action-btn'>
-                Detalles
+                className='btn btn-danger action-btn'>
+                Eliminar
                   </button>
                   </>
               }
