@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from 'react';
 import Portafolio from '../components/Portafolio';
 import ButtonRedirect from './ButtonRedirect';
+import history from '../history';
 
 
 class Portafolios extends Component {
@@ -49,7 +50,8 @@ class Portafolios extends Component {
                 <>
                   <button
                   id= 'ensayo'
-                  className='btn btn-success action-btn'>
+                  className='btn btn-success action-btn'
+                  onClick={() => history.push(`/Portafolios/${portafolio.id}`)} >
                   Editar
                     </button>
                     <button
