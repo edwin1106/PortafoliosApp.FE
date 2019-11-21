@@ -127,10 +127,14 @@ class CrearActividad extends React.Component {
 }
 const validate = (formValues) => {
   const errors = {};
-  if (!formValues.objetivo) {errors.objetivo = 'El campo no debe estar vacío';}
-  if (!formValues.nombre) {errors.nombre= 'El campo no debe estar vacío';}
+  if (!formValues.descripcion) {errors.descripcion = "Este capo no debe estar vacío";}
+  if (!formValues.tutor) {errors.tutor = "Este capo no debe estar vacío";}
+  if (!formValues.portafolioId) {errors.portafolioId = "Debe seleccionar una opción";}
+  if (!formValues.fecha) {errors.fecha = "Debe asignar una fecha";}
+
+
   return errors;
-  };
+}
 
  export default reduxForm({
   form: 'PostActividad', validate

@@ -126,8 +126,8 @@ class ActualizarActividad extends React.Component {
 }
 const validate = (formValues) => {
   const errors = {};
-  if (!formValues.objetivo) {errors.objetivo = 'El campo no debe estar vacío';}
-  if (!formValues.nombre) {errors.nombre= 'El campo no debe estar vacío';}
+  if (!formValues.descripcion) {errors.descripcion = 'El campo no debe estar vacío';}
+  if (!formValues.tutor) {errors.tutor= 'El campo no debe estar vacío';}
   return errors;
   };
 
