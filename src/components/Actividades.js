@@ -21,6 +21,19 @@ class Actividades extends Component {
       );
     }
 
+    if (this.props.actividades.length<=0) {
+      return (
+        <div>
+        <ButtonRedirect
+          text = {'Crear Actividad'}
+          link = {'/Actividades/Crear'}/>
+        <center>
+          <p>No existen Actividades Registradas</p>
+        </center>
+        </div>
+      );
+    }
+
     return (
       <>
       <ButtonRedirect

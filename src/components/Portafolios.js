@@ -22,6 +22,19 @@ class Portafolios extends Component {
       );
     }
 
+    if (this.props.portafolios.length<=0) {
+      return (
+        <div>
+        <ButtonRedirect
+          text = {'Crear Actividad'}
+          link = {'/Portafolios/Crear'}/>
+        <center>
+          <p>No existen Portafolios Registrados</p>
+        </center>
+        </div>
+      );
+    }
+
     return (
       <>
       <ButtonRedirect

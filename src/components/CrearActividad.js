@@ -92,10 +92,14 @@ class CrearActividad extends React.Component {
           <div className="row mb-3">
             <div className="col">
               <Field 
-                name="puntaje" 
+              type="number"
+                name="puntaje"
+                
                 component={this.renderInput} 
                 label="Puntaje"
-                placeholder="Ingrese un puntaje" />
+                placeholder="Ingrese un puntaje"
+                validate={[number, negativeNumber]}
+                />
             </div>
             <div className="col">
               <label>Fecha</label>
@@ -132,9 +136,16 @@ const validate = (formValues) => {
   if (!formValues.portafolioId) {errors.portafolioId = "Debe seleccionar una opción";}
   if (!formValues.fecha) {errors.fecha = "Debe asignar una fecha";}
 
-
   return errors;
 }
+const number = value =>
+  value && isNaN(Number(value)) ? 'Este campo debe ser numérico' : undefined
+  
+export const negativeNumber = value =>
+  value && !/^[0-9.]+$/i.test(value)
+    ? 'El puntaje debe ser positivo'
+    : undefined
+  
 
  export default reduxForm({
   form: 'PostActividad', validate
