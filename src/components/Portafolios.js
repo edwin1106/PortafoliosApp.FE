@@ -26,7 +26,7 @@ class Portafolios extends Component {
       return (
         <div>
         <ButtonRedirect
-          text = {'Crear Actividad'}
+          text = {'Crear Portafolio'}
           link = {'/Portafolios/Crear'}/>
         <center>
           <p>No existen Portafolios Registrados</p>
