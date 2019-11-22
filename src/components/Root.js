@@ -9,6 +9,7 @@ import CrearActividadPage from '../pages/CrearActividadPage';
 import CrearPortafolioPage from '../pages/CrearPortafolioPage';
 import ActualizarPortafolioPage from '../pages/ActualizarPortafolioPage';
 import ActualizarActividadPage from '../pages/ActualizarActividadPage';
+import InfoPortafolioPage from '../pages/InfoPortafolioPage';
 
 
 const Root = () => {
@@ -25,6 +26,7 @@ const Root = () => {
           <Route path="/Portafolios/Crear" exact component = {CrearPortafolioPage}/>
           <Route path="/Portafolios/:Id" exact component = {ActualizarPortafolioPage}/>
           <Route path="/Actividades/:Id" exact component = {ActualizarActividadPage}/>
+          <Route path="/Portafolio/Detalles/:portafolioId" exact component = {InfoPortafolioPage}/>
         </Switch>  
       </div>
     </Router>

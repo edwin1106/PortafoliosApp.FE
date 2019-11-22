@@ -56,7 +56,8 @@ class Portafolios extends Component {
                     </button>
                     <button
                     id = 'ensayo'
-                  className='btn btn-success action-btn'>
+                  className='btn btn-success action-btn'
+                  onClick={() => history.push(`Portafolio/Detalles/${portafolio.id}`)}>
                   Detalles
                     </button>
                     </>

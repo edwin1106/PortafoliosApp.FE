@@ -57,9 +57,10 @@ class Actividades extends Component {
                 Editar
                   </button>
                   <button
-                  id = 'ensayo'
-                className='btn btn-danger action-btn'>
-                Eliminar
+                    id = 'ensayo'
+                    className='btn btn-danger action-btn'
+                    onClick={() => this.props.removingActividad(actividad.id)}>
+                      Eliminar
                   </button>
                   </>
               }

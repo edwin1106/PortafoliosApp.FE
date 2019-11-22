@@ -21,3 +21,7 @@ export const getActividadById = async (id) => {
     const response = await axios.get(`${ACTIVIDADES_API_URL}/${id}`)
     return response.data
 }
+
+export const deleteActividad = async (id) => {
+  await axios.delete(`${ACTIVIDADES_API_URL}/${id}`)
+}

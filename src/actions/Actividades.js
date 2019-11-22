@@ -1,5 +1,5 @@
 import ACTIONS from "./types";
-import {getActividades, postActividades, getActividadById, putActividad} from "../api/ActividadApi";
+import {getActividades, postActividades, getActividadById, putActividad, deleteActividad} from "../api/ActividadApi";
 import history from '../history'
 import {processDateAttributes} from '../common/utilities/dataTransformations'
 
@@ -22,6 +22,11 @@ export const updateActividad = () =>({
   type: ACTIONS.UPDATE_ACTIVIDADES
 })
 
+export const removeActividad = (id) => ({
+  type: ACTIONS.DELETE_ACTIVIDADES,
+  payload: id
+})
+
 export const fetchingActividades = () => async (dispatch) => {
     const actividades = await getActividades()
     dispatch(fetchActividades(actividades))
@@ -42,4 +47,9 @@ export const fetchingActividadById =(id) =>async(dispatch) =>{
 export const updatingActividad = (actividad) =>async() =>{
   await putActividad(actividad)
   history.push(`/Actividades`)
+}
+
+export const removingActividad = (id) => async (dispatch) =>{
+  await deleteActividad(id)
+  dispatch(removeActividad(id))
 }
