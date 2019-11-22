@@ -1,5 +1,5 @@
 import ACTIONS from "./types";
-import {getActividades, postActividades, getActividadById, putActividad, deleteActividad} from "../api/ActividadApi";
+import {getActividades, postActividades, getActividadById, putActividad, deleteActividad, getActividadesByPortafolioId} from "../api/ActividadApi";
 import history from '../history'
 import {processDateAttributes} from '../common/utilities/dataTransformations'
 
@@ -27,6 +27,11 @@ export const removeActividad = (id) => ({
   payload: id
 })
 
+export const fetchActividadesByPortafolioId = (actividades) =>({
+  type: ACTIONS.FETCH_ACTIVIDADES_BY_PORTAFOLIO_ID,
+  payload: actividades
+})
+
 export const fetchingActividades = () => async (dispatch) => {
     const actividades = await getActividades()
     dispatch(fetchActividades(actividades))
@@ -52,4 +57,10 @@ export const updatingActividad = (actividad) =>async() =>{
 export const removingActividad = (id) => async (dispatch) =>{
   await deleteActividad(id)
   dispatch(removeActividad(id))
+}
+
+export const fetchingActividadesByPortafolioId =(id) => async (dispatch) =>{
+  const response = await getActividadesByPortafolioId(id);
+  console.log(response);
+  dispatch(fetchActividadesByPortafolioId(response))
 }

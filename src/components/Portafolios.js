@@ -5,6 +5,7 @@ import ButtonRedirect from './ButtonRedirect';
 import history from '../history';
 
 
+
 class Portafolios extends Component {
   componentDidMount() {
     this.props.fetchingPortafolios()
@@ -50,7 +51,7 @@ class Portafolios extends Component {
                 <>
                   <button
                   id= 'ensayo'
-                  className='btn btn-success action-btn'
+                  className='btn btn-primary action-btn'
                   onClick={() => history.push(`/Portafolios/${portafolio.id}`)} >
                   Editar
                     </button>

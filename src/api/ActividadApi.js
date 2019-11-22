@@ -25,3 +25,8 @@ export const getActividadById = async (id) => {
 export const deleteActividad = async (id) => {
   await axios.delete(`${ACTIVIDADES_API_URL}/${id}`)
 }
+
+export const getActividadesByPortafolioId = async (id) => {
+  const response = await axios.get(`${ACTIVIDADES_API_URL}/portafolioId/${id}`)
+  return response.data
+}
