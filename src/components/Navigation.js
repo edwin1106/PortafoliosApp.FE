@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
       <div className="container">
-        <Link className="navbar-brand" to={'/'}> Fundación el Maná</Link>
+        <Link className="navbar-brand" to={'/'}> ManaApp</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
