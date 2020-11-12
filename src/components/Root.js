@@ -12,6 +12,7 @@ import ActualizarActividadPage from '../pages/ActualizarActividadPage';
 import InfoPortafolioPage from '../pages/InfoPortafolioPage';
 import UsuariosPage from '../pages/UsuariosPage';
 import CrearUsuarioPage from '../pages/CrearUsuarioPage'
+import ActualizarUsuarioPage from '../pages/ActualizarUsuarioPage';
 
 
 const Root = () => {
@@ -31,6 +32,7 @@ const Root = () => {
           <Route path="/Portafolio/Detalles/:portafolioId" exact component = {InfoPortafolioPage}/>
           <Route path="/Usuarios" exact component = {UsuariosPage}/>
           <Route path="/Usuarios/Crear" exact component = {CrearUsuarioPage}/>
+          <Route path="/Usuarios/:Id" exact component = {ActualizarUsuarioPage}/>
         </Switch>  
       </div>
     </Router>

@@ -1,6 +1,7 @@
 import ACTIONS from "./types";
 import { deleteUsuario, getUsuarioById, getUsuarios, postUsuario, putUsuario } from "../api/UsuarioApi";
 import history from '../history'
+import {processDateAttributes} from '../common/utilities/dataTransformations'
 
 
 export const fetchUsuarios = (usuarios) => ({
@@ -43,6 +44,7 @@ export const updatingUsuario = (usuario) => async () => {
 
 export const fetchingUsuarioById = (id) => async (dispatch) => {
   const usuario = await getUsuarioById(id);
+  processDateAttributes(usuario, ['fechaNacimiento'])
   dispatch(fetchUsuarioById(usuario))
 }
 
