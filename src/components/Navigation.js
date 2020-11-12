@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
       <div className="container">
-        <Link className="navbar-brand" to={'/'}> ManaApp</Link>
+        <Link className="navbar-brand" to={'/'}> CetusApp</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -17,6 +17,9 @@ const Navigation = () => {
             </Link>
             <Link className="nav-link" to={`/Actividades`}>
               Actividades
+            </Link>
+            <Link className="nav-link" to={`/Usuarios`}>
+              Usuarios
             </Link>
           </Nav>
         </Navbar.Collapse>

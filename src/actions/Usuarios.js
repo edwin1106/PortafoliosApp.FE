@@ -43,7 +43,7 @@ export const updatingUsuario = (usuario) => async () => {
 
 export const fetchingUsuarioById = (id) => async (dispatch) => {
   const usuario = await getUsuarioById(id);
-  dispatch(fetchPortafolioById(usuario))
+  dispatch(fetchUsuarioById(usuario))
 }
 
 export const removingUsuario = (id) => async (dispatch) =>{
