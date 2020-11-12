@@ -3,6 +3,7 @@ const Constants = Object.freeze({
     API_ENDPOINTS: {
         PORTAFOLIOS: 'portafolios',
         ACTIVIDADES: 'actividades',
+        USUARIOS: 'usuarios'
     } 
 })
 
