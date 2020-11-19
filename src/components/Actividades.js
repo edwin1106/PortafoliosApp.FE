@@ -75,6 +75,12 @@ class Actividades extends Component {
                     onClick={() => this.props.removingActividad(actividad.id)}>
                       Eliminar
                   </button>
+                  <button
+                    id = 'ensayo'
+                    className='btn btn-primary action-btn'
+                    onClick={() => history.push(`/ActividadUsuarios/${actividad.id}`)}>
+                      Usuarios
+                  </button>
                   </>
               }
             />
