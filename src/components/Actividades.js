@@ -8,6 +8,7 @@ import history from '../history';
 class Actividades extends Component {
   componentDidMount() {
     this.props.fetchingActividades()
+    this.props.fetchingPortafolios()
   }
 
   render() {
@@ -21,72 +22,83 @@ class Actividades extends Component {
       );
     }
 
-    if (this.props.actividades.length<=0) {
-      return (
-        <div>
-        <ButtonRedirect
-          text = {'Crear Actividad'}
-          link = {'/Actividades/Crear'}/>
-        <center>
-          <p>No existen Actividades Registradas</p>
-        </center>
-        </div>
-      );
+    if (this.props.actividades.length <= 0) {
+
+      if (this.props.portafolios.length > 0) {
+        return (
+          <div>
+            <ButtonRedirect
+              text={'Crear Actividad'}
+              link={'/Actividades/Crear'} />
+            <center>
+              <p>No existen Actividades Registradas</p>
+            </center>
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            <center>
+              <p>No existen Actividades Registradas debe registrar primero un portafolio</p>
+            </center>
+          </div>
+        );
+      }
     }
 
     return (
       <>
-      <ButtonRedirect
-      text = {'Crear Actividad'}
-      link = {'/Actividades/Crear'}
-      />
+        <ButtonRedirect
+          text={'Crear Actividad'}
+          link={'/Actividades/Crear'}
+        />
         <div>
-        <table className="table table-hover">
-          <thead className="thead-light">
-            <tr>
-              <th scope='col'>Id</th>
-              <th scope='col'>Descripción</th>
-              <th scope='col'>Tutor</th>
-              <th scope='col'>Puntaje</th>
-              <th scope='col'>fecha</th>
-              <th scope='col'>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-          {this.props.actividades.map((actividad) =>
-            <Actividad
-              key ={actividad.id}
-              id= {actividad.id}
-              descripcion= {actividad.descripcion}
-              tutor = {actividad.tutor}
-              puntaje = {actividad.puntaje}
-              fecha = {actividad.fecha}
-              acciones = {
-                <>
-                <button
-                id= 'ensayo'
-                className='btn btn-success action-btn'
-                onClick={() => history.push(`/Actividades/${actividad.id}`)} >
-                Editar
+          <table className="table table-hover">
+            <thead className="thead-light">
+              <tr>
+                <th scope='col'>Id</th>
+                <th scope='col'>Descripción</th>
+                <th scope='col'>Tutor</th>
+                <th scope='col'>Puntaje</th>
+                <th scope='col'>fecha</th>
+                <th scope='col'>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.props.actividades.map((actividad) =>
+                <Actividad
+                  key={actividad.id}
+                  id={actividad.id}
+                  descripcion={actividad.descripcion}
+                  tutor={actividad.tutor}
+                  puntaje={actividad.puntaje}
+                  fecha={actividad.fecha}
+                  acciones={
+                    <>
+                      <button
+                        id='ensayo'
+                        className='btn btn-success action-btn'
+                        onClick={() => history.push(`/Actividades/${actividad.id}`)} >
+                        Editar
                   </button>
-                  <button
-                    id = 'ensayo'
-                    className='btn btn-danger action-btn'
-                    onClick={() => this.props.removingActividad(actividad.id)}>
-                      Eliminar
+                      <button
+                        id='ensayo'
+                        className='btn btn-danger action-btn'
+                        onClick={() => this.props.removingActividad(actividad.id)}>
+                        Eliminar
                   </button>
-                  <button
-                    id = 'ensayo'
-                    className='btn btn-primary action-btn'
-                    onClick={() => history.push(`/ActividadUsuarios/${actividad.id}`)}>
-                      Usuarios
+                      <button
+                        id='ensayo'
+                        className='btn btn-primary action-btn'
+                        onClick={() => history.push(`/ActividadUsuarios/${actividad.id}`)}>
+                        Usuarios
                   </button>
-                  </>
-              }
-            />
-          )}
-          </tbody>
-        </table>
+                    </>
+                  }
+                />
+              )}
+            </tbody>
+          </table>
         </div>
         <br></br>
         <button
